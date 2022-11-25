@@ -1,37 +1,11 @@
 import Head from "next/head";
-import { CardanoWallet, MeshBadge, useWallet } from "@martifylabs/mesh-react";
-import { createTransaction, signTransaction } from "../backend";
-import { useState } from "react";
+import { BlockfrostProvider } from '@martifylabs/mesh';
+import { StakeButton, MeshBadge } from "@martifylabs/mesh-react";
 
 export default function Home() {
-  const { wallet, connected } = useWallet();
-  const [txHash, setTxHash] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
-
-  async function startStaking() {
-    setLoading(true);
-    try {
-      const recipientAddress = await wallet.getChangeAddress();
-      const utxos = await wallet.getUtxos();
-
-      const { assetName, maskedTx, originalMetadata } = await createTransaction(
-        recipientAddress,
-        utxos
-      );
-
-      const signedTx = await wallet.signTx(maskedTx, true);
-
-      const { txHash } = await signTransaction(
-        assetName,
-        signedTx,
-        originalMetadata
-      );
-      setTxHash(txHash);
-    } catch (error) {
-      console.error(error);
-    }
-    setLoading(false);
-  }
+  const blockfrost = new BlockfrostProvider(
+    'testnetJe6W7FM1Jwkh0PxNMZt9OzNND3T1mS1T'
+  );
 
   return (
     <div className="container">
@@ -55,23 +29,10 @@ export default function Home() {
         </h1>
 
         <div className="demo">
-          {connected ? (
-            <button
-              type="button"
-              onClick={() => startStaking()}
-              disabled={loading}
-            >
-              {loading ? "Creating transaction..." : "Mint Mesh Token"}
-            </button>
-          ) : (
-            <CardanoWallet />
-          )}
-          {txHash && (
-            <div>
-              <p>Successful, transaction hash:</p>
-              <code>{txHash}</code>
-            </div>
-          )}
+          <StakeButton
+            onCheck={(address: string) => blockfrost.fetchAccountInfo(address)}
+            poolId="pool1adur9jcn0dkjpm3v8ayf94yn3fe5xfk2rqfz7rfpuh6cw6evd7w"
+          />
         </div>
 
         <div className="grid">

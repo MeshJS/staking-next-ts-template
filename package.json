@@ -1,9 +1,10 @@
 {
   "name": "staking-next-ts-template",
+  "description": "A Mesh staking template",
   "version": "0.1.0",
   "private": true,
-  "description": "A Mesh starter template",
   "author": "MartifyLabs",
+  "license": "Apache-2.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,19 +12,18 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@martifylabs/mesh": "^1.2.0",
-    "@martifylabs/mesh-react": "^1.0.1",
-    "next": "12.3.1",
+    "@martifylabs/mesh": "1.2.0-beta.1",
+    "@martifylabs/mesh-react": "1.0.1-beta.3",
+    "next": "13.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@types/node": "18.11.0",
-    "@types/react": "18.0.21",
-    "@types/react-dom": "18.0.6",
-    "autoprefixer": "^10.4.12",
-    "eslint": "8.25.0",
-    "eslint-config-next": "12.3.1",
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.8",
+    "eslint": "8.27.0",
+    "eslint-config-next": "13.0.2",
     "typescript": "4.8.4"
   }
 }
