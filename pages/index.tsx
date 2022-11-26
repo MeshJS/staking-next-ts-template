@@ -1,10 +1,10 @@
 import Head from "next/head";
-import { BlockfrostProvider } from '@martifylabs/mesh';
+import { BlockfrostProvider } from "@martifylabs/mesh";
 import { StakeButton, MeshBadge } from "@martifylabs/mesh-react";
 
 export default function Home() {
   const blockfrost = new BlockfrostProvider(
-    'testnetJe6W7FM1Jwkh0PxNMZt9OzNND3T1mS1T'
+    process.env.NEXT_PUBLIC_BLOCKFROST_API_KEY!
   );
 
   return (
@@ -44,14 +44,11 @@ export default function Home() {
             </p>
           </a>
 
-          <a
-            href="https://mesh.martify.io/guides/staking"
-            className="card"
-          >
+          <a href="https://mesh.martify.io/guides/staking" className="card">
             <h2>Staking guide</h2>
             <p>
-              Learn more about creating staking transactions, and how you can create a
-              site for minting native tokens.
+              Learn more about creating staking transactions, and how you can
+              create a site for minting native tokens.
             </p>
           </a>
 
