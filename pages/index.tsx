@@ -1,11 +1,9 @@
 import Head from "next/head";
-import { BlockfrostProvider } from "@martifylabs/mesh";
+import { KoiosProvider } from "@martifylabs/mesh";
 import { StakeButton, MeshBadge } from "@martifylabs/mesh-react";
 
 export default function Home() {
-  const blockfrost = new BlockfrostProvider(
-    process.env.NEXT_PUBLIC_BLOCKFROST_API_KEY!
-  );
+  const koios = new KoiosProvider('preprod');
 
   return (
     <div className="container">
@@ -30,8 +28,8 @@ export default function Home() {
 
         <div className="demo">
           <StakeButton
-            onCheck={(address: string) => blockfrost.fetchAccountInfo(address)}
-            poolId="pool1adur9jcn0dkjpm3v8ayf94yn3fe5xfk2rqfz7rfpuh6cw6evd7w"
+            onCheck={(address: string) => koios.fetchAccountInfo(address)}
+            poolId="pool1547tew8vmuj0g6vj3k5jfddudextcw6hsk2hwgg6pkhk7lwphe6"
           />
         </div>
 
