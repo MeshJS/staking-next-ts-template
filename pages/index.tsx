@@ -3,7 +3,7 @@ import { KoiosProvider } from "@martifylabs/mesh";
 import { StakeButton, MeshBadge } from "@martifylabs/mesh-react";
 
 export default function Home() {
-  const koios = new KoiosProvider('preprod');
+  const blockchainProvider = new KoiosProvider("preprod");
 
   return (
     <div className="container">
@@ -28,7 +28,9 @@ export default function Home() {
 
         <div className="demo">
           <StakeButton
-            onCheck={(address: string) => koios.fetchAccountInfo(address)}
+            onCheck={(address: string) =>
+              blockchainProvider.fetchAccountInfo(address)
+            }
             poolId="pool1547tew8vmuj0g6vj3k5jfddudextcw6hsk2hwgg6pkhk7lwphe6"
           />
         </div>
@@ -42,11 +44,14 @@ export default function Home() {
             </p>
           </a>
 
-          <a href="https://mesh.martify.io/guides/staking" className="card">
-            <h2>Staking guide</h2>
+          <a
+            href="https://mesh.martify.io/react/ui-components#stakeButton"
+            className="card"
+          >
+            <h2>Staking Button</h2>
             <p>
-              Learn more about creating staking transactions, and how you can
-              create a site for minting native tokens.
+              Learn more about the staking button that creating staking
+              transactions, and add into your website.
             </p>
           </a>
 
