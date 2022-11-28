@@ -6,6 +6,10 @@ Start project with this template:
 npx create-mesh-app staking-next-ts-template
 ```
 
+Start your project on [Demeter](https://demeter.run/):
+
+[![Code in Cardano Workspace](https://demeter.run/code/badge.svg)](https://demeter.run/code?repository=https://github.com/MartifyLabs/staking-next-ts-template.git&template=typescript)
+
 ## Learn More
 
 ### [React components and hooks](https://mesh.martify.io/react)
