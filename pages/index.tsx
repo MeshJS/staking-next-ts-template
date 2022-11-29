@@ -3,7 +3,7 @@ import { KoiosProvider } from "@martifylabs/mesh";
 import { StakeButton, MeshBadge } from "@martifylabs/mesh-react";
 
 export default function Home() {
-  const blockchainProvider = new KoiosProvider("preprod");
+  const blockchainProvider = new KoiosProvider("api");
 
   return (
     <div className="container">
@@ -31,7 +31,7 @@ export default function Home() {
             onCheck={(address: string) =>
               blockchainProvider.fetchAccountInfo(address)
             }
-            poolId="pool1547tew8vmuj0g6vj3k5jfddudextcw6hsk2hwgg6pkhk7lwphe6"
+            poolId="pool1mhww3q6d7qssj5j2add05r7cyr7znyswe2g6vd23anpx5sh6z8d"
           />
         </div>
 
