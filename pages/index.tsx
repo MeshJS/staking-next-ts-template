@@ -1,6 +1,6 @@
 import Head from "next/head";
-import { KoiosProvider } from "@martifylabs/mesh";
-import { StakeButton, MeshBadge } from "@martifylabs/mesh-react";
+import { KoiosProvider } from "@meshsdk/core";
+import { StakeButton, MeshBadge } from "@meshsdk/react";
 
 export default function Home() {
   const blockchainProvider = new KoiosProvider("api");
