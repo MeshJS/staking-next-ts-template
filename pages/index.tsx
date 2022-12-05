@@ -12,10 +12,10 @@ export default function Home() {
         <meta name="description" content="A Cardano dApp powered my Mesh" />
         <link
           rel="icon"
-          href="https://mesh.martify.io/favicon/favicon-32x32.png"
+          href="https://meshjs.dev/favicon/favicon-32x32.png"
         />
         <link
-          href="https://mesh.martify.io/css/template.css"
+          href="https://meshjs.dev/css/template.css"
           rel="stylesheet"
           key="mesh-demo"
         />
@@ -23,7 +23,7 @@ export default function Home() {
 
       <main className="main">
         <h1 className="title">
-          <a href="https://mesh.martify.io/">Mesh</a> Pool Operator Portal
+          <a href="https://meshjs.dev/">Mesh</a> Pool Operator Portal
         </h1>
 
         <div className="demo">
@@ -36,7 +36,7 @@ export default function Home() {
         </div>
 
         <div className="grid">
-          <a href="https://mesh.martify.io/apis" className="card">
+          <a href="https://meshjs.dev/apis" className="card">
             <h2>Documentation</h2>
             <p>
               Our documentation provide live demos and code samples; great
@@ -45,7 +45,7 @@ export default function Home() {
           </a>
 
           <a
-            href="https://mesh.martify.io/react/ui-components#stakeButton"
+            href="https://meshjs.dev/react/ui-components#stakeButton"
             className="card"
           >
             <h2>Staking Button</h2>
@@ -55,7 +55,7 @@ export default function Home() {
             </p>
           </a>
 
-          <a href="https://mesh.martify.io/react" className="card">
+          <a href="https://meshjs.dev/react" className="card">
             <h2>React components</h2>
             <p>
               Useful React UI components and hooks, seamlessly integrate them
