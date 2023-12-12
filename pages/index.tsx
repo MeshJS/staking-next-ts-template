@@ -6,7 +6,8 @@ import { CardanoWallet } from '@meshsdk/react';
 export default function Home() {
   const blockchainProvider = new MaestroProvider({
     network: 'Preprod', // 'Mainnet', 'Preprod', 'Preview'
-    apiKey: 'xyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxy', //'<Your-API-Key>',
+    apiKey: 'xyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxy', //'<Your-API-Key>'
+      // ^ you should not hardcode this here for production, use an enviroment variable 
     turboSubmit: false
   });
 
