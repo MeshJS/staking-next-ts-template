@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { MaestroProvider } from "@meshsdk/core";
 import { StakeButton, MeshBadge } from "@meshsdk/react";
+import { CardanoWallet } from '@meshsdk/react';
 
 export default function Home() {
   const blockchainProvider = new MaestroProvider({
@@ -31,6 +32,7 @@ export default function Home() {
         </h1>
 
         <div className="demo">
+          <CardanoWallet />
           <StakeButton
             onCheck={(address: string) =>
               blockchainProvider.fetchAccountInfo(address)
