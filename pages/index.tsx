@@ -1,9 +1,13 @@
 import Head from "next/head";
-import { KoiosProvider } from "@meshsdk/core";
+import { MaestroProvider } from "@meshsdk/core";
 import { StakeButton, MeshBadge } from "@meshsdk/react";
 
 export default function Home() {
-  const blockchainProvider = new KoiosProvider("api");
+  const blockchainProvider = new MaestroProvider({
+    network: 'Preprod', // 'Mainnet', 'Preprod', 'Preview'
+    apiKey: 'xyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxy', //'<Your-API-Key>',
+    turboSubmit: false
+  });
 
   return (
     <div className="container">
