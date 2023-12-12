@@ -1,9 +1,15 @@
 import Head from "next/head";
-import { KoiosProvider } from "@meshsdk/core";
+import { MaestroProvider } from "@meshsdk/core";
 import { StakeButton, MeshBadge } from "@meshsdk/react";
+import { CardanoWallet } from '@meshsdk/react';
 
 export default function Home() {
-  const blockchainProvider = new KoiosProvider("api");
+  const blockchainProvider = new MaestroProvider({
+    network: 'Preprod', // 'Mainnet', 'Preprod', 'Preview'
+    apiKey: 'xyzxyzxyzxyzxyzxyzxyzxyzxyzxyzxy', //'<Your-API-Key>'
+      // ^ you should not hardcode this here for production, use an enviroment variable 
+    turboSubmit: false
+  });
 
   return (
     <div className="container">
@@ -27,6 +33,7 @@ export default function Home() {
         </h1>
 
         <div className="demo">
+          <CardanoWallet />
           <StakeButton
             onCheck={(address: string) =>
               blockchainProvider.fetchAccountInfo(address)
