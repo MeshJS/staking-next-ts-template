@@ -3,7 +3,7 @@ import { KoiosProvider } from "@meshsdk/core";
 import { StakeButton, MeshBadge } from "@meshsdk/react";
 
 export default function Home() {
-  const blockchainProvider = new KoiosProvider("api");
+  const blockchainProvider = new KoiosProvider('api', process.env.KOIOS_API_KEY);
 
   return (
     <div className="container">
