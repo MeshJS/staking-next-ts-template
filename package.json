@@ -12,11 +12,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@meshsdk/core": "1.2.0-beta.4",
-    "@meshsdk/react": "1.1.1",
-    "next": "13.0.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "@meshsdk/core": "^1.5.11-beta.6",
+    "@meshsdk/react": "^1.1.10-beta.3",
+    "next": "^14.1.4"
   },
   "devDependencies": {
     "@types/node": "18.11.0",
