@@ -1,9 +1,9 @@
 import Head from "next/head";
-import { KoiosProvider } from "@meshsdk/core";
 import { StakeButton, MeshBadge } from "@meshsdk/react";
 
+const localPoolID = process.env.NEXT_PUBLIC_POOL_ID
+
 export default function Home() {
-  const blockchainProvider = new KoiosProvider('api', process.env.KOIOS_API_KEY);
 
   return (
     <div className="container">
@@ -28,10 +28,19 @@ export default function Home() {
 
         <div className="demo">
           <StakeButton
-            onCheck={(address: string) =>
-              blockchainProvider.fetchAccountInfo(address)
-            }
-            poolId="pool1mhww3q6d7qssj5j2add05r7cyr7znyswe2g6vd23anpx5sh6z8d"
+            onCheck={(address: string) => {
+              return new Promise((resolve, reject) => {
+                fetch(`/api/koios?address=${address}`)
+                  .then(response => response.json())
+                  .then(info => {
+                    resolve(info);
+                  })
+                  .catch(error => {
+                    reject(error);
+                  });
+              });
+            }}
+            poolId={localPoolID}
           />
         </div>
 
